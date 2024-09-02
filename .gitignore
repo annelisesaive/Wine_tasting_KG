@@ -1,5 +1,4 @@
-
-*.ipynb
-*.ipynb
-*.ipynb
+.DS_Store
+.DS_Store
+/code/.ipynb_checkpoints
 .DS_Store
