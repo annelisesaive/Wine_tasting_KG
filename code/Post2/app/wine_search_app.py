@@ -3,11 +3,36 @@ import streamlit as st
 
 # Load the "interesting wines" dataset
 file_path = '/Users/annelise/Documents/GitHub/Wine_tasting_KG/data_kaggle/'
-interesting_wines_path = file_path + 'interesting_wines.csv'  # Path to the filtered dataset
+picture_path = '/Users/annelise/Documents/GitHub/Wine_tasting_KG/code/Post2/'
+interesting_wines_path = file_path + 'concise_interesting_wines.csv'  # Path to the filtered dataset
 wine_data = pd.read_csv(interesting_wines_path)
 
 # Title of the app
-st.title('QualitySip: Discover The Best Wines That Match Your Budget')
+st.markdown("""
+            # Welcome to QUALITYSIP 🍷
+            ## Discover The Best Wines That Match Your Budget
+            """)
+
+# Add the logo of the app
+image_path = picture_path + 'QualitySip_logo.png'  # Replace with your image file path
+st.image(image_path, caption=None, use_column_width=True)
+
+# App explanation & functionalities
+st.markdown("""
+---
+QualitySip is your personalized wine discovery tool! Whether you're a casual drinker or a wine connoisseur, 
+our app helps you find the best wines that offer great value for money. 
+
+The wines featured here have been selected because they stand out for offering exceptional quality for their price, 
+based on ratings and reviews from expert tasters at **WineEnthusiast**. 
+Along with each wine's rating, you'll also find an expert description to help guide your choice.
+
+You can search by ***price, country, variety, & region*** to find the perfect bottle. 
+Enjoy the journey of discovering new wines tailored to your taste and budget!
+
+---
+
+""")
 
 # Search Criteria: Price Range
 price_range = st.slider('Select Price Range', min_value=float(wine_data['price'].min()), max_value=float(wine_data['price'].max()), value=(0.0, 50.0))
