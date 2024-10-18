@@ -2,10 +2,8 @@ import pandas as pd
 import streamlit as st
 
 # Load the "interesting wines" dataset
-file_path = '/Users/annelise/Documents/GitHub/Wine_tasting_KG/data_kaggle/'
-picture_path = '/Users/annelise/Documents/GitHub/Wine_tasting_KG/code/Post2/'
-interesting_wines_path = file_path + 'concise_interesting_wines.csv'  # Path to the filtered dataset
-wine_data = pd.read_csv(interesting_wines_path)
+interesting_wines_csv = 'concise_interesting_wines.csv'  # Path to the filtered dataset
+wine_data = pd.read_csv(interesting_wines_csv)
 
 # Title of the app
 st.markdown("""
@@ -14,7 +12,7 @@ st.markdown("""
             """)
 
 # Add the logo of the app
-image_path = picture_path + 'QualitySip_logo.png'  # Replace with your image file path
+image_path = 'QualitySip_logo.png'  # Replace with your image file path
 st.image(image_path, caption=None, use_column_width=True)
 
 # App explanation & functionalities
