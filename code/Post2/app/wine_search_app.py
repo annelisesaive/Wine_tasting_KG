@@ -2,8 +2,9 @@ import pandas as pd
 import streamlit as st
 
 # Load the "interesting wines" dataset
-interesting_wines_csv = 'concise_interesting_wines.csv'  # Path to the filtered dataset
-wine_data = pd.read_csv(interesting_wines_csv)
+interesting_wines_path = './concise_interesting_wines.csv'
+wine_data = pd.read_csv(interesting_wines_path)
+
 
 # Title of the app
 st.markdown("""
