@@ -2,8 +2,7 @@ import pandas as pd
 import streamlit as st
 
 # Load the "interesting wines" dataset
-interesting_wines_path = './data/concise_interesting_wines.csv'
-wine_data = pd.read_csv(interesting_wines_path)
+wine_data = pd.read_csv('concise_interesting_wines.csv')
 
 # Title of the app
 st.markdown("""
@@ -12,7 +11,7 @@ st.markdown("""
             """)
 
 # Add the logo of the app
-image_path = './QualitySip_logo.png'  # Ensure the image is in the same directory
+image_path = 'QualitySip_logo.png'  # Ensure the image is in the same directory
 st.image(image_path, caption=None, use_column_width=True)
 
 # App explanation & functionalities
