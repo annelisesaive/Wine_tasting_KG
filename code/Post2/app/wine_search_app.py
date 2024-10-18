@@ -1,7 +1,5 @@
 import pandas as pd
 import streamlit as st
-import os
-
 
 # Load the "interesting wines" dataset
 csv_file = "./code/Post2/app/concise_interesting_wines.csv"
@@ -43,24 +41,24 @@ filtered_data = wine_data[
     (wine_data['price'] <= price_range[1])
 ]
 
-# Dynamic Search Criteria: Country (only countries that match the selected price range)
+# Dynamic Search Criteria: Country (multi-select for multiple countries)
 countries = st.multiselect('Select Country', options=filtered_data['country'].unique(), default=None)
 
-# Update filtered_data based on selected country
+# Update filtered_data based on selected countries (if any are selected)
 if countries:
     filtered_data = filtered_data[filtered_data['country'].isin(countries)]
 
-# Dynamic Search Criteria: Variety (only varieties available in the selected country and price range)
+# Dynamic Search Criteria: Variety (multi-select for multiple varieties)
 varieties = st.multiselect('Select Variety', options=filtered_data['variety'].unique(), default=None)
 
-# Update filtered_data based on selected variety
+# Update filtered_data based on selected varieties (if any are selected)
 if varieties:
     filtered_data = filtered_data[filtered_data['variety'].isin(varieties)]
 
-# Dynamic Search Criteria: Province (only provinces available in the selected country, variety, and price range)
+# Dynamic Search Criteria: Province (multi-select for multiple provinces)
 provinces = st.multiselect('Select Province', options=filtered_data['province'].unique(), default=None)
 
-# Update filtered_data based on selected province
+# Update filtered_data based on selected provinces (if any are selected)
 if provinces:
     filtered_data = filtered_data[filtered_data['province'].isin(provinces)]
 
