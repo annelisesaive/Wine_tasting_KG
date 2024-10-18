@@ -2,8 +2,6 @@ import pandas as pd
 import streamlit as st
 import os
 
-# Check the current working directory
-st.write("Current working directory: ", os.getcwd())
 
 # Load the "interesting wines" dataset
 csv_file = "./code/Post2/app/concise_interesting_wines.csv"
